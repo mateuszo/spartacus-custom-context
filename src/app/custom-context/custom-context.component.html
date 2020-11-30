@@ -1,0 +1,14 @@
+<select
+  (change)="onChange()"
+  [(ngModel)]="currentContext"
+  name="context"
+  *ngIf="availableContexts$ | async as availableContexts"
+>
+  <option
+    *ngFor="let ctx of availableContexts"
+    [value]="ctx"
+    [selected]="ctx === currentContext"
+  >
+    {{ ctx }}
+  </option>
+</select>
