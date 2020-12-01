@@ -6,14 +6,12 @@ import { ContextServiceMap } from '@spartacus/core';
 import { B2cStorefrontModule, OutletRefModule, SiteContextSelectorModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
 import { SITE_CONTEXTS } from './available-contexts';
-import { CustomContextComponent } from './custom-context/custom-context.component';
 import { customServiceMapFactory } from './custom-service-map';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CustomContextComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +25,8 @@ import { customServiceMapFactory } from './custom-service-map';
       },
       context: {
         custom: SITE_CONTEXTS,
-        currency: ['USD'],
-        language: ['en'],
-        baseSite: ['electronics-spa'],
         urlParameters: ['custom'],
+        baseSite: ['electronics-spa'],
       },
       i18n: {
         resources: translations,
